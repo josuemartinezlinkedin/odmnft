@@ -1,7 +1,7 @@
 import { View, Image, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { CircleButton, RectButton } from './Button';
-
+import {NFTTitle, EthPrice, SubInfo} from './SubInfo';
 import { COLORS, SHADOWS, SIZES, assets } from '../constants';
 
 const NFTCard = ({data}) => {
@@ -19,7 +19,7 @@ const NFTCard = ({data}) => {
             width: "100%", height:250
         }}>
             <Image
-            source={data.image}
+            source={data.image} 
             resizeMode="cover"
             style={{
                 width:"100%",
@@ -32,6 +32,7 @@ const NFTCard = ({data}) => {
             imgUrl={assets.heart} right={10} top={10}
             />
         </View>
+        <SubInfo />
     </View>
   )
 }
