@@ -1,17 +1,49 @@
 import { View, Text, Image } from 'react-native'
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from '../constants'
 
-const NFTTitle = () => {
+const NFTTitle = ({title, subTitle, titleSize,subTitleSize}) => {
   return (
     <View>
-      <Text>NFTTitle</Text>
+        <Text
+        style={{
+            fontFamily: FONTS.semiBold,
+            fontSize: titleSize-1,
+            color: COLORS.primary,
+            marginLeft: 7.5
+        }}>
+        {title}
+        </Text>
+        <Text
+        style={{
+            fontFamily: FONTS.regular,
+            fontSize: subTitleSize-1,
+            color: COLORS.primary,
+            marginLeft: 8
+        }}>
+        by {subTitle}
+        </Text>
     </View>
   )
 }
-const EthPrice = () => {
+const EthPrice = ({price}) => {
     return (
-        <View>
-            <Text>EthPrice</Text>
+        <View style={{ flexDirection: 'row', alignItems:'center'}}>
+            <Image
+            source={assets.eth}
+            resizeMode='contain'
+            style={{
+                width: 20, height: 20, marginRight: 2
+            }}
+            />
+            <Text
+            style={{
+                fontFamily: FONTS.medium,
+                fontSize: SIZES.font,
+                color: COLORS.primary
+            }}
+            >
+             {price}
+            </Text>
         </View>
     )
 }
@@ -32,7 +64,10 @@ const People = () => {
         }}>
             {[assets.person02, assets.person03,assets.person04].map(
                 (imgUrl, index) => (
-                    <ImageCmp imgUrl={imgUrl} index={index}/>                 
+                    <ImageCmp 
+                    imgUrl={imgUrl} 
+                    index={index} 
+                    key={`people-${index}`}/>                 
                 )
             )
             }
@@ -42,8 +77,31 @@ const People = () => {
 
 const EndDate = () => {
     return (
-        <View>
-            <Text>EndDate</Text>
+        <View 
+        style={{
+            paddingHorizontal: SIZES.font,
+            paddingVertical: SIZES.base,
+            backgroundColor: COLORS.white,
+            justifyContent: 'center',
+            alignItems: 'center',
+            ...SHADOWS.light,
+            elevation: 1,
+            maxWidth: '50%'
+        }}>
+            <Text style={{
+                fontFamily: FONTS.regular, 
+                fontSize: SIZES.small,
+                color: COLORS.primary
+                 }}>
+                     Ending In
+                 </Text>
+            <Text style={{
+                fontFamily: FONTS.semiBold,
+                fontSize: SIZES.small,
+                color: COLORS.primary
+            }}>
+                12h 30m
+            </Text>
         </View>
     )
 }
@@ -57,7 +115,7 @@ const SubInfo = () => {
             justifyContent: 'space-between'
         }}>
             <People />
-            <Text>SubInfo</Text>
+            <EndDate />
         </View>
     )
 }
