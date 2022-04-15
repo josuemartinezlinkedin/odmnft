@@ -26,12 +26,30 @@ const CircleButton = ({imgUrl, handlePress, ...props}) => {
   )
 }
 
-const RectButton = () => {
+const RectButton = ({handlePress, ...props}) => {
     return (
-        <View>
-            <Text>RectButton</Text>
-        </View>
-    )
+        <TouchableOpacity
+            style={{
+                backgroundColor: COLORS.primary,
+                borderRadius: SIZES.extraLarge,
+                minWidth: 100,
+                height:45,
+                marginBottom: 10,
+                ...props
+            }}
+            onPress={handlePress}
+        >
+          <Text style={{
+              fontFamily: FONTS.semiBold,
+              fontSize: SIZES.font,
+              color: COLORS.white,
+              textAlign:'center',
+              marginTop: 15
+          }}>
+              Place a bid
+          </Text>
+        </TouchableOpacity>
+    )   
 }
 
 export { CircleButton, RectButton }
