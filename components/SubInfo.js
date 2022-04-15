@@ -7,18 +7,18 @@ const NFTTitle = ({title, subTitle, titleSize,subTitleSize}) => {
         <Text
         style={{
             fontFamily: FONTS.semiBold,
-            fontSize: titleSize-1,
+            fontSize: titleSize-.5,
             color: COLORS.primary,
-            marginLeft: 7.5
+            marginLeft: 5.5
         }}>
         {title}
         </Text>
         <Text
         style={{
             fontFamily: FONTS.regular,
-            fontSize: subTitleSize-1,
+            fontSize: subTitleSize,
             color: COLORS.primary,
-            marginLeft: 8
+            marginLeft: 6
         }}>
         by {subTitle}
         </Text>
@@ -32,7 +32,7 @@ const EthPrice = ({price}) => {
             source={assets.eth}
             resizeMode='contain'
             style={{
-                width: 20, height: 20, marginRight: 2
+                width: 27, height: 27, marginRight: 2
             }}
             />
             <Text
