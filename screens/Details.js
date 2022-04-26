@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Image, FlatList, SafeAreaView, Text} from 'react-native'
 import { COLORS, FONTS, SHADOWS, SIZES, assets } from '../constants'
-import { CircleButton, RectButton, FocusedStatusBar, DetailsBid, DetailsDescr, DetailsHeader } from '../components'
+import { CircleButton, RectButton, FocusedStatusBar, DetailsBid, DetailsDescr, DetailsHeader, SubInfo } from '../components'
 
 const Details = ({route, navigation}) => {
   const {data} = route.params;
@@ -33,6 +33,10 @@ const Details = ({route, navigation}) => {
       ListHeaderComponent={()=> (
         <React.Fragment>
           <DetailsHeader data={data} navigation={navigation} CircleButton={CircleButton}/>
+          <SubInfo/>
+          <View style={{padding: SIZES.font}}>
+            <DetailsDescr data={data}/>
+          </View>
         </React.Fragment>
         
       )}

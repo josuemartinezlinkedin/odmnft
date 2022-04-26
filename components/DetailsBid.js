@@ -3,7 +3,7 @@ import React from 'react'
 
 const DetailsBid = () => {
   return (
-    <View>
+    <View style={{paddingTop: 5}}>
       <Text>DetailsBid</Text>
     </View>
   )
