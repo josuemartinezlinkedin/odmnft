@@ -5,7 +5,7 @@ import {COLORS, NFTData} from "../constants";
 import {NFTCard, HomeHeader, FocusedStatusBar} from '../components';
 
 const Home = () => {
-const [nftData, setNftData] = useState();
+const [nftData, setNftData] = useState(NFTData);
 
 const HandleSearch = (value) => {
   if (value.length === 0 ) { setNftData(NFTData)};
